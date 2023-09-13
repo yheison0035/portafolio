@@ -111,6 +111,7 @@ main>.content-description{
 .content-description .container p {
     text-align: justify;
     place-self: center;
+    color: var(--white);
 }
 
 main>.content-projects{
