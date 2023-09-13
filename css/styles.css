@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto:wght@100;300&display=swap');
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --golden: #ffc629;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: auto;
+    overflow: hidden;
+}
+
+header>.content-title{
+    position: absolute;
+    z-index: 10;
+}
+
+.content-options {
+    position: absolute;
+    top: 30vh;
+    right: 20px;
+    color: var(--white);
+    z-index: 100;
+}
+
+.content-options ul {
+    list-style: none;
+}
+
+.content-options ul li {
+    text-align: right;
+    cursor: pointer;
+    margin: 20px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.content-options ul li span {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.content-options ul li.active span{
+    padding-right: 10px;
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.content-options ul li:hover span {
+    border-right: 4px solid;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+    -webkit-animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+}
+
+.content-description,
+.content-projects,
+.content-skills,
+.content-contact {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+}
+
+.content-description.active,
+.content-projects.active,
+.content-skills.active,
+.content-contact.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+main>.content-description{
+    position: absolute;
+    background: green;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-description .container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.content-description .container span{
+    place-self: center;
+    width: 300px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 30px;
+}
+
+.content-description .container p {
+    text-align: justify;
+    place-self: center;
+}
+
+main>.content-projects{
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+main>.content-skills{
+    position: absolute;
+    background: orange;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+main>.content-contact{
+    position: absolute;
+    background: gray;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@keyframes typing {
+    from { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
